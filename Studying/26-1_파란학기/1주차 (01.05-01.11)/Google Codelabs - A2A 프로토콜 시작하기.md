@@ -129,3 +129,6 @@ Operation "operations/..." finished successfully.
 		--update-env-vars GOOGLE_CLOUD_LOCATION=us-central1 \
 		--update-env-vars GOOGLE_CLOUD_PROJECT=a2a-agent-engine-483904
 	```
+
+- 버거 에이전트와 동일하게 url 값 수정.
+
