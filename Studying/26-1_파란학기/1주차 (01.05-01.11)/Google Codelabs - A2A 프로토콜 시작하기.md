@@ -32,3 +32,27 @@
 - 사용자는 A2A 클라이언트 역할을 하는 에이전트 개발 키트(ADK) 프레임워크를 사용하여 실행되는 구매 컨시어지와만 직접 상호작용함.
 - 각 에이전트는 자체 환경과 배포를 가짐.
 
+# 워크숍 개발 설정 준비
+
+- Google Console에서 프로젝트 생성.
+- 무료 체험판 결제 계정 연결.
+- Cloud Shell 연결.
+	1. 셸이 계정으로 이미 인증되었는지 확인.
+		```
+		gcloud auth list
+		```
+	2. 다음과 같이 뜨면 정상.
+		```
+		Credentialed Accounts
+		
+		ACTIVE: *
+		ACCOUNT: 2ju1230@gmail.com
+		
+		To set the active account, run:
+		    $ gcloud config set account `ACCOUNT`
+		```
+- Cloud Shell에서 아래 레포지토리에 대해 git clone 수행.
+	```
+	git clone https://github.com/alphinside/purchasing-concierge-intro-a2a-codelab-starter.git purchasing-concierge-a2a
+	```
+- Cloud Shell에서 편집기(Editor) 열기.
