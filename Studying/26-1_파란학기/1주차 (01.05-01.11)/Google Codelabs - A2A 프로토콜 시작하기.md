@@ -132,3 +132,19 @@ Operation "operations/..." finished successfully.
 
 - 버거 에이전트와 동일하게 url 값 수정.
 
+# 5. 구매 컨시어지 - A2A 클라이언트를 Agent Enginedp 배포
+
+- 아래의 명령어로 Cloud Storage에 스테이징 스토리지를 만듦.
+	```
+	gcloud storage buckets create gs://purchasing-concierge-a2a-agent-engine-483904 --location=us-central1
+	```
+
+- `.env.example` 파일 복사 후 알맞은 값으로 수정.
+```
+cp .env.example .env
+```
+
+- 에이전트 엔진 배포.
+```
+uv run deploy_to_agent_engine.py
+```
