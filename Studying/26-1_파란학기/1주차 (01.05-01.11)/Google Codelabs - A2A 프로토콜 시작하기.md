@@ -148,3 +148,6 @@ cp .env.example .env
 ```
 uv run deploy_to_agent_engine.py
 ```
+
+- 콘솔에서 `Agent Engine` 리소스 이름 확인 후 `.env` 파일의 `AGENT_ENGINE_RESOURCE_NAME` 업데이트
+
