@@ -189,4 +189,11 @@ uv run deploy_to_agent_engine.py
 ### 테스트 큐 및 에이전트 실행기
 
 - 각 A2A 서버는 수신 작업을 추적하고 이에 관한 적절한 정보를 저장할 수 있어야 함.
-- A2A SDK를 통해 
+- A2A SDK에서 제공하는 모듈을 통해 수신 요청을 처리하는 방법을 나타내는 로직을 인스턴스화할 수 있음.
+- 아래의 코드는 AgentExecutor 추상 클래스를 상속하여 작업 실행 및 취소를 관리하는 방법을 제어하는 코드임.
+	- `remote_seller_agents/burger_agent/agent_executor.py`
+	![[Pasted image 20260112023219.png]]
+- 아래의 코드는 BurgerSellerAgentExecutor와 함께 DefaultRequestHandler, InMemoryTaskStore, 및 A2AStarletteApplication을 활용하여 HTTP 서버를 시작하는 코드임.
+	- `remote_seller_agents/burger_agent/__main__.py`
+	![[Pasted image 20260112023553.png]]
+	- 이 모듈은 에이전트 카드에 액세스하는 `/.well-known/agent.json` 경로와 A2A 프로토콜을 지원하는 POST 엔드포인트를 구현함.
