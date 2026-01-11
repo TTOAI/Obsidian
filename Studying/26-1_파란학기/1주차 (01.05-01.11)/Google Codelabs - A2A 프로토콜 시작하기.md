@@ -149,5 +149,19 @@ cp .env.example .env
 uv run deploy_to_agent_engine.py
 ```
 
-- 콘솔에서 `Agent Engine` 리소스 이름 확인 후 `.env` 파일의 `AGENT_ENGINE_RESOURCE_NAME` 업데이트
+- 콘솔에서 `Agent Engine` 리소스 이름 확인 후 `.env` 파일의 `AGENT_ENGINE_RESOURCE_NAME` 업데이트.
+
+- 아래의 명령어를 통해 에이전트가 성공적으로 배포되었는지 테스트.
+	```
+	bash test_agent_engine.sh
+	```
+
+# 6. 통합 테스트 및 페이로드 검사
+
+- 웹 UI를 사용하여 원격 에이전트 상호작용으로 구매 컨시어지를 검사해보기.
+
+- 아래의 명령어를 통해 Gradio 앱 배포.
+	```
+	uv run purchasing_concierge_ui.py
+	```
 
