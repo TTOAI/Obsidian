@@ -4,14 +4,17 @@
     
 - 내 풀이
 ```sql
-
+SELECT F.FLAVOR
+FROM FIRST_HALF F
+JOIN (
+    SELECT FLAVOR, SUM(TOTAL_ORDER) AS TOTAL
+    FROM JULY
+    GROUP BY FLAVOR
+) J
+ON F.FLAVOR = J.FLAVOR
+ORDER BY F.TOTAL_ORDER + J.TOTAL DESC
+LIMIT 3
 ```
-    
-- 모범 답안
-```sql
-
-```
-    
 
 ---
 
