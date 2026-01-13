@@ -217,3 +217,20 @@ WHERE B.id IS NULL
 6. 정렬 (ORDER BY)
 
 ---
+
+## CROSS JOIN
+
+```sql
+FROM A, B
+```
+
+- `ON` 없으면 무조건 곱집합.
+- `JOIN` 조건 명시해야 함.
+
+```
+ON A.id = B.id
+```
+
+- JOIN에는 항상 연결조건이 있어야 함.
+
+---
