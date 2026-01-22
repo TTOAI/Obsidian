@@ -1,4 +1,4 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ㅊ## 1. 소프트웨어 테스팅이란?
+## 1. 소프트웨어 테스팅이란?
 
 ### 소프트웨어 테스팅의 정의
 
@@ -80,8 +80,41 @@
 - 기능 테스트(Functional Testing)
 - 비기능 테스트(Non-functional Testing)
 
-**소프트웨어 테스트 유형 구조도**
-![[Pasted image 20260122164726.png]]
+**소프트웨어 테스트 유형(Software Testing Types)**
+- Functional Testing
+	- Unit Testing
+		- White Box Testing
+		- Gorilla Testing
+	- Integration Testing
+		- Gray Box Testing
+	- System Testing
+		- End to End Testing
+		- Black Box Testing
+		- Smoke Testing
+		- Sanity Testing
+		- Happy path Testing
+		- Money Testing
+	- Acceptation Testing
+		- Alpha Testing
+		- Beta Testing
+		- OAT
+- Non Functional Testing
+	- Security Testing
+		- Penetration Testing
+	- Performance Testing
+		- Load Testing
+		- Stress Testing
+		- Soak Testing
+		- Volume Testing
+		- Endurance Testing
+		- Scalability Testing
+	- Usability Testing
+		- Exploratory Testing
+		- Cross browser Testing
+		- Accessibility Testing
+	- Compatibility Testing
+
+---
 
 ## 2. 소프트웨어 개발 프로세스와 테스팅
 
@@ -94,8 +127,34 @@
 
 ### 코드 기반 시험 요소 기술
 
-![[Pasted image 20260122171929.png]]
--  기능적으로 정적 기술(코드 실행 X)과 동적 기술(코드 실행 O)로 구분할 수 있음
+**C/C++/Java 언어 분석 기술**
+- C/C++/Java 표준 완벽 지원
+- C/C++ 다양한 컴파일러 dialect 지원
+- 제어 흐름 / 함수 호출 관계 / 코드 메트릭 등
+- 다양한 코드 구조 및 흐름 정보 추출
+
+**코딩 규칙 검사 기술**
+- MISRA / CWE / CERT / DAPA 등 다양한  
+    코딩 표준 검사
+- 규칙 커스터마이징 가능
+
+**코드 탐침 및 자동 생성 기술**
+- 실행 모니터링을 위한 탐침
+- 임베디드 소프트웨어 시뮬레이션을 위한  코드 변환
+- 테스트 / 스텁 등 코드 생성
+
+**테스트 자동 생성 및 실행 기술**
+- 테스트 코드 / 테스트 데이터 / 스텁 코드  자동 생성
+- 테스트 자동 실행 및 모니터링
+
+**코드 구조 및 흐름 시각화 기술**
+- Eclipse 플랫폼 기반 제어 흐름 / 함수 호출  관계 / 함수 프로토타입 / 코드 메트릭 등  시각화
+
+**실행 의미 분석 기술**
+- 요약해석(Abstract Interpretation)
+- 자료 흐름 분석(Data Flow Analysis)
+- 메모리 모양 분석(Shape Analysis)
+-  코드 기반 시험 요소 기술은 기능적으로 정적 기술(코드 실행 X)과 동적 기술(코드 실행 O)로 구분할 수 있음
 
 ### 코드 정적 분석 기술
 
@@ -160,7 +219,7 @@
 - 테스트 자동 실행
 - 테스트 커버리지 자동 측정
 
-##            4. 테스트 커버리지
+## 4. 테스트 커버리지
 
 - 구조적 커버리지 -> 단위테스트
 	- 테스트가 소수 코드 구조를 최소 한 번 실행했는지 측정
@@ -178,11 +237,21 @@
 - Effectiveness: 품질 향상
 - Efficiency: 비용 절감
 
-### 제어 흐름 기반 테스트 설계
+### 구조 기반 설계 방법
+**제어 흐름 기반 테스트 설계**
 - 제어 흐름 그래프(Control Flow Graph) 내의 노드(실행, 조건)와 에지를 골고루 실행하는 테스트 설계
-
-### 데이터 흐름 기반 테스트 설계
+**데이터 흐름 기반 테스트 설계**
 - 코드 안의 각 변수에 대해 어디서 값이 정의되고, 사용되며, 그 사이 경로에 다른 정의가 끼어들지 않는지를 분석하는 테스트 설계
 - 데이터 흐름 그래프(Data Flow Graph) 그리기
-- def-clear path: 경로 안에 관심 변수의 정의가 없는 경로
-- def-use path(du path): 관심 변수의 정의와 사용 중간에 다른 정의가 없는 경로
+- def-clear path: 경로 안에 관심 변수의 재정의가 없는 경로
+- def-use path(du path): 관심 변수의 정의와 사용 중간에 재정의가 없는 경로
+
+### 요구사항/명세 기반 설계 방법
+**동등분할기법**
+- 입력값(또는 출력값)의 범위를 동일하게 동작할 것이라고 기대되는 그룹으로 나누고, 각 그룹에서 대표값 1개만 선택해서 테스트하는 기법
+**경계값 분석**
+- 동등분할로 나눈 각 범위에서, 경계(boundary) 근처 값들을 집중적으로 테스트하는 기법
+**상태전이도(State transition diagram) 기반 테스트 설계**
+- 시스템을 상태(State), 이벤트(Event), 가드(Guard), 액션(Action) 으로 표현한 상태전이도를 기준으로 가능한 상태 변화(전이)를 테스트 케이스로 만드는 명세 기반(Black-box) 테스트 기법
+**Decision table 기반 설계**
+- 여러 조건(Condition)이 동시에 영향을 주는 복잡한 요구사항을 "조건 조합 ↔ 결과" 형태의 표(table) 로 정리해서 각 열(column)을 테스트 케이스 1개로 만드는 명세 기반 테스트 기법
