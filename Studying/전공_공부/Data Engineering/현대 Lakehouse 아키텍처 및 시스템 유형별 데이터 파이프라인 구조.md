@@ -91,6 +91,7 @@ Lakehouse (Iceberg on S3)
 	- DW 모델링
 
 - 표준 구조
+	- MPP DW는 Lakehouse의 downstream BI serving layer로 사용됨
 ```
 [Upstream]
 OLTP / Logs / Events
@@ -305,6 +306,7 @@ Lakehouse
 	- 배치 + 스트리밍 통합
 	- ACID 테이블(Iceberg)로 데이터 관리
 	- 분석/ML에 최적
+	- Object Storage 중심
 
 - 하지 않는 것
 	- 사용자 API 직접 처리
@@ -314,11 +316,11 @@ Lakehouse
 - 전체 위치
 ```
 System of Record(OLTP)
-
+	↓
 Lakehouse
-
+	↓
 BI / ML / Feature
-
+	↓
 Serving Store
 ```
 ---
