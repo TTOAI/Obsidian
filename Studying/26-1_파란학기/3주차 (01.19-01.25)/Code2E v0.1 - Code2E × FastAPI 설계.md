@@ -265,9 +265,8 @@ decision: continue automation
 - Code2E 프레임워크의 최소 실체
 ---
 
-## 참고
+## Final Agent가 작성할 보고서의 구조
 
-- Final Agent가 작성할 보고서의 구조 예시
 ```
 1. 실험 개요
     - 실험 목적
@@ -289,3 +288,6 @@ decision: continue automation
     - 이후 사람이 작업해야 할 방향
 ```
 ---
+
+## MCP 구현
+
