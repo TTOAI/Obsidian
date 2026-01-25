@@ -288,6 +288,3 @@ decision: continue automation
     - 이후 사람이 작업해야 할 방향
 ```
 ---
-
-## MCP 구현
-
