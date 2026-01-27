@@ -243,9 +243,14 @@
 ## 할 것
 
 - OCR 모델 선택
+	- 입력 유형
+		- 채팅 캡처 이미지
+		- 공고 이미지 혹은 스크린샷
+	- 목적: 위험 신호 추출이 가능한 최소 텍스트 확보
+	- https://devocean.sk.com/experts/techBoardDetail.do?ID=165524
 	- `VILA`
 	- `Google Vision OCR`
-	- `Naver CLOVA OCR
+	- `Naver CLOVA OCR` (V)
 
 - 크롤링해야 할 데이터 정하기
 	- 사용자가 사용하는 플랫폼 종류
